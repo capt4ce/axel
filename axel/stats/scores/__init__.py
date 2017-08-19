@@ -1,7 +1,8 @@
 """Collection scorings calculation"""
 import sys
 import codecs
-from django.conf import settings
+# from django.conf import settings
+import definitions as settings
 
 _EXPIRE = sys.maxint
 

@@ -31,15 +31,15 @@ def build_index():
     """
     if cache.has_key(WORDS_SET):
         return
-    from axel.stats.models import Collocations
-    index = defaultdict(list)
-    for id, concept in Collocations.objects.values_list('id', 'ngram'):
-        for word in concept.split():
-            index[word].append(id)
-    for key, values in index.iteritems():
-        cache.set(CONCEPT_PREFIX + key, values, EXPIRE)
-
-    cache.set(WORDS_SET, set(index.keys()), EXPIRE)
+    # from axel.stats.models import Collocations
+    # index = defaultdict(list)
+    # for id, concept in Collocations.objects.values_list('id', 'ngram'):
+    #     for word in concept.split():
+    #         index[word].append(id)
+    # for key, values in index.iteritems():
+    #     cache.set(CONCEPT_PREFIX + key, values, EXPIRE)
+    #
+    # cache.set(WORDS_SET, set(index.keys()), EXPIRE)
 
 
 def update_index(c_id, keywords):
